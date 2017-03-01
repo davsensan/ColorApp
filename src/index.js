@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StarRating from './StarRating';
-import App from './App'
+import App from './components/App'
 
 ReactDOM.render(
   <App />,

@@ -1,5 +1,5 @@
 import React, {PropTypes}  from 'react'
-import './star.css';
+import './css/star.css';
 
 
 const Star = ({ selected=false, onClick=f=>f }) => 
