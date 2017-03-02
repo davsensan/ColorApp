@@ -1,7 +1,8 @@
+import '../../stylesheets/AddColorForm.scss'
 import React, { PropTypes } from 'react'
 import { addColor } from '../redux/actions'
 
-const AddColorForm = ({store}) => {
+const AddColorForm = (props, {store}) => {
 
     let _title, _color
 
@@ -26,8 +27,10 @@ const AddColorForm = ({store}) => {
 
 }
 
-AddColorForm.propTypes = {
+//Es obligatorio siempre que queramos acceder a algún store mediante context
+AddColorForm.contextTypes = {
     store: PropTypes.object
-}
+	}
+
 
 export default AddColorForm

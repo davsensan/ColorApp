@@ -4,11 +4,12 @@ import App from './components/App'
 import storeFactory from './redux/store'
 
 const store = storeFactory()
+console.log(store)
+window.React = React
+window.store = store
 
-const render = () => ReactDOM.render(
+ReactDOM.render(
   <App store={store}/>,
     document.getElementById('root')
 )
 
-store.subscribe(render)
-render()
