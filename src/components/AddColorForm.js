@@ -4,33 +4,32 @@ import { addColor } from '../redux/actions'
 
 const AddColorForm = (props, {store}) => {
 
-    let _title, _color
+	let _title, _color
 
-    const submit = e => {
-        e.preventDefault()
-        store.dispatch( addColor(_title.value, _color.value) )
-        _title.value = ''
-        _color.value = '#000000'
-        _title.focus()
-    }
+	const submit = e => {
+		e.preventDefault()
+		store.dispatch( addColor(_title.value, _color.value) )
+		_title.value = ''
+		_color.value = '#000000'
+		_title.focus()
+	}
 
-    return (
-        <form className="add-color" onSubmit={submit}>
-            <input ref={input => _title = input}
-                   type="text"
-                   placeholder="color title..." required/>
-            <input ref={input => _color = input}
-                   type="color" required/>
-            <button>ADD</button>
-        </form>
-    )
-
+	return (
+		<form className="add-color" onSubmit={submit}>
+			<input ref={input => _title = input}
+				type="text"
+				placeholder="color title..." required/>
+			<input ref={input => _color = input}
+				type="color" required/>
+			<button>ADD</button>
+		</form>
+	)
 }
 
 //Es obligatorio siempre que queramos acceder a algún store mediante context
 AddColorForm.contextTypes = {
-    store: PropTypes.object
-	}
+	store: PropTypes.object
+}
 
 
 export default AddColorForm
